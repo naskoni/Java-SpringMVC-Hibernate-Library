@@ -44,16 +44,13 @@ public final class LendServiceImpl implements LendService {
 			return lendDao.findLends();
 		}
 
-		if ("book".equals(searchParam) || "client".equals(searchParam)) {
-
-		}
-
 		if ((CommonConstants.LENDING_DATE.equals(searchParam) || CommonConstants.RETURN_DATE.equals(searchParam))
 				&& ParseUtils.tryParseDate(searchedWord)) {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			try {
 				java.util.Date parsed = sdf.parse(searchedWord);
 				java.sql.Date searchedDate = new java.sql.Date(parsed.getTime());
+
 				return lendDao.findLends(searchedDate, searchParam);
 			} catch (ParseException e) {
 				// already caught in ParseUtils
