@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -12,10 +11,6 @@ import javax.persistence.Table;
 public class LibraryUser implements Serializable {
 
 	private static final long serialVersionUID = 8982237127885447860L;
-
-	@Id
-	@Column(name = "ID")
-	private long id;
 
 	@Column(name = "USERNAME")
 	private String username;
@@ -34,14 +29,6 @@ public class LibraryUser implements Serializable {
 
 	@Column(name = "ROLE")
 	private String role;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getUsername() {
 		return username;

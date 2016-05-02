@@ -4,18 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
+import bg.jwd.library.entity.AbstractEntity;
 
 @Entity
 @Table(name = "BOOK")
-public class Book implements Serializable {
+public class Book extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 315247235922550809L;
-
-	@Id
-	@Column(name = "ID")
-	private long id;
 
 	@Column(name = "NAME")
 	private String name;
@@ -28,14 +25,6 @@ public class Book implements Serializable {
 
 	@Column(name = "ISBN")
 	private String isbn;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

@@ -5,22 +5,18 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import bg.jwd.library.entity.AbstractEntity;
 import bg.jwd.library.entity.user.LibraryUser;
 
 @Entity
 @Table(name = "CLIENT")
-public class Client implements Serializable {
+public class Client extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = -7265644640817017364L;
-
-	@Id
-	@Column(name = "ID")
-	private long id;
 
 	@Column(name = "NAME")
 	private String name;
@@ -34,14 +30,6 @@ public class Client implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "CREATED_BY")
 	private LibraryUser createdBy;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

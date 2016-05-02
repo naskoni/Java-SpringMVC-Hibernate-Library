@@ -5,7 +5,6 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -18,10 +17,6 @@ import bg.jwd.library.entity.client.Client;
 public class Lend implements Serializable {
 
 	private static final long serialVersionUID = 215247235922550809L;
-
-	@Id
-	@Column(name = "ID")
-	private long id;
 
 	@ManyToOne
 	@JoinColumn(name = "BOOK")
@@ -36,14 +31,6 @@ public class Lend implements Serializable {
 
 	@Column(name = "RETURN_DATE")
 	private Date returnDate;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public Book getBook() {
 		return book;
