@@ -6,9 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import bg.jwd.library.entity.AbstractEntity;
+
 @Entity
 @Table(name = "LIBRARY_USER")
-public class LibraryUser implements Serializable {
+public class LibraryUser extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 8982237127885447860L;
 

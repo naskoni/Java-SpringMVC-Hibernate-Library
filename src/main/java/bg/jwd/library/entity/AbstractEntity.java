@@ -1,8 +1,10 @@
 package bg.jwd.library.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public abstract class AbstractEntity {
 
 	@Id

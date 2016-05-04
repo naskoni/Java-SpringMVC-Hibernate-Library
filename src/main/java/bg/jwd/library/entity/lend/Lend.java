@@ -9,12 +9,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import bg.jwd.library.entity.AbstractEntity;
 import bg.jwd.library.entity.book.Book;
 import bg.jwd.library.entity.client.Client;
 
 @Entity
 @Table(name = "LEND")
-public class Lend implements Serializable {
+public class Lend extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 215247235922550809L;
 
